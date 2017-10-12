@@ -1,9 +1,7 @@
 function random(min, max) {
 	return Math.floor((Math.random() * max) + min);
 }
-function GetValue() {
-	return this.count;
-}
+
 function Sum() {
 	var firstType = 0;
 	var secondType = 0;
@@ -15,4 +13,14 @@ function Sum() {
 		thirdType += arr[i].GetCount3 == undefined ? 0 : arr[i].GetCount3();
 	}
 	return [firstType, secondType, thirdType];
+}
+function GetCounter(element) {
+	console.log(element);
+	if (element.GetCount1 != undefined) {
+		return element.GetCount1();
+	}
+	else if(element.GetCount2 != undefined) {
+		return element.GetCount2();
+	}
+	else return element.GetCount3();
 }
